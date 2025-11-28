@@ -21,7 +21,7 @@ return {
                                 default = "qwen3-coder:30b",
                             },
                             keep_alive = {
-                                default = "5m",
+                                default = "30m",
                             },
                         },
                     })

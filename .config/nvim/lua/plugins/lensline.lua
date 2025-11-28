@@ -1,6 +1,8 @@
 return {
     "oribarilan/lensline.nvim",
-    tag = "release/1.x", -- or: branch = 'release/1.x' for latest non-breaking updates
+    tag = "2.0.0", -- or: branch = 'release/2.x' for latest non-breaking updates
     event = "LspAttach",
-    opts = {},
+    config = function()
+        require("lensline").setup()
+    end,
 }

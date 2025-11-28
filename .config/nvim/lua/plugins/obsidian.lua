@@ -28,32 +28,31 @@ return {
 
         new_notes_location = "notes_subdir",
 
-        disable_frontmatter = false,
-
-        ---@param note obsidian.Note
-        ---@return table
-        note_frontmatter_func = function(note)
-            -- Add the title of the note as an alias.
-            if note.title then
-                note:add_alias(note.title)
-            end
-
-            local out = {
-                id = note.id,
-                title = note.title,
-                path = note.path.filename,
-                tags = note.tags,
-                date = os.date("%Y-%m-%d"),
-            }
-
-            if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-                for k, v in pairs(note.metadata) do
-                    out[k] = v
+        frontmatter = {
+            enable = false,
+            func = function(note)
+                -- Add the title of the note as an alias.
+                if note.title then
+                    note:add_alias(note.title)
                 end
-            end
 
-            return out
-        end,
+                local out = {
+                    id = note.id,
+                    title = note.title,
+                    path = note.path.filename,
+                    tags = note.tags,
+                    date = os.date("%Y-%m-%d"),
+                }
+
+                if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+                    for k, v in pairs(note.metadata) do
+                        out[k] = v
+                    end
+                end
+
+                return out
+            end,
+        },
 
         ---@param title string|?
         ---@return string

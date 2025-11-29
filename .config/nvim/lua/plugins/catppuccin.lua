@@ -9,7 +9,6 @@ return {
     integrations = {
         gitsigns = true,
         treesitter = true,
-        telescope = true,
         mason = true,
         blink_cmp = true,
     },

@@ -4,7 +4,6 @@ return {
     ---@type oil.SetupOpts
     opts = {
         view_options = {
-            show_hidden = true,
             case_insensitive = true,
         },
     },

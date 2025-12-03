@@ -33,4 +33,11 @@ return {
             log_level = "DEBUG",
         },
     },
+    keys = {
+        {
+            "<leader>cc",
+            "<cmd>CodeCompanionChat<CR>",
+            desc = "Toggle Code Companion Chat",
+        },
+    },
 }

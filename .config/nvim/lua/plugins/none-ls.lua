@@ -17,7 +17,12 @@ return {
                 require("none-ls.diagnostics.ruff"),
             },
         })
-
-        vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
     end,
+    keys = {
+        {
+            "<leader>gf",
+            vim.lsp.buf.format,
+            desc = "Buffer format",
+        },
+    },
 }

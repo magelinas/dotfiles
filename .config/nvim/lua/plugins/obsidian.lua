@@ -100,10 +100,10 @@ return {
         },
 
         ui = {
-            enable = true,               -- set to false to disable all additional syntax features
+            enable = true, -- set to false to disable all additional syntax features
             ignore_conceal_warn = false, -- set to true to disable conceallevel specific warning
-            update_debounce = 200,       -- update delay after a text change (in milliseconds)
-            max_file_length = 5000,      -- disable UI features for files with more than this many lines
+            update_debounce = 200, -- update delay after a text change (in milliseconds)
+            max_file_length = 5000, -- disable UI features for files with more than this many lines
             -- Use bullet marks for non-checkbox lists.
             bullets = { char = "•", hl_group = "ObsidianBullet" },
             external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
@@ -133,21 +133,22 @@ return {
             order = { " ", "~", "!", ">", "x" },
         },
     },
-
-    vim.keymap.set("n", "<leader>on", "<Cmd>Obsidian new<CR>", { desc = "[O]bsidian [N]ew note" }),
-    vim.keymap.set("n", "<leader>ob", "<Cmd>Obsidian backlinks<CR>", { desc = "[O]bsidian [B]acklinks" }),
-    vim.keymap.set("v", "<leader>oen", "<Cmd>Obsidian extract_note<CR>", { desc = "[O]bsidian [E]xtract [N]ote" }),
-    vim.keymap.set("n", "<CR>", "<Cmd>Obsidian follow_link<CR>", { desc = "Obsidian Follow Link" }),
-    vim.keymap.set(
-        "v",
-        "<leader>on",
-        "<Cmd>Obsidian link_new<CR>",
-        { desc = "[O]bsidian Visual selection [N]ew Link" }
-    ),
-    vim.keymap.set("n", "<leader>ol", "<Cmd>Obsidian links<CR>", { desc = "[O]bsidian [L]ist Links" }),
-    vim.keymap.set("n", "<leader>oo", "<Cmd>Obsidian quick_switch<CR>", { desc = "[O]bsidian [O]pen Notes" }),
-    vim.keymap.set("n", "<leader>of", "<Cmd>Obsidian search<CR>", { desc = "[O]bsidian [F]ind" }),
-    vim.keymap.set("n", "<leader>ot", "<Cmd>Obsidian tags<CR>", { desc = "[O]bsidian [T]ags" }),
-    vim.keymap.set("n", "<leader>oc", "<Cmd>Obsidian toc<CR>", { desc = "[O]bsidian Table of [C]ontents" }),
-    vim.keymap.set("n", "<C-space>", "<Cmd>Obsidian toggle_checkbox<CR>", { desc = "Obsidian Toggle Checkbox" }),
+    keys = {
+        { "<leader>on", "<Cmd>Obsidian new<CR>", desc = "[O]bsidian [N]ew note" },
+        { "<leader>ob", "<Cmd>Obsidian backlinks<CR>", desc = "[O]bsidian [B]acklinks" },
+        { "<leader>oen", "<Cmd>Obsidian extract_note<CR>", desc = "[O]bsidian [E]xtract [N]ote" },
+        { "<CR>", "<Cmd>Obsidian follow_link<CR>", desc = "Obsidian Follow Link" },
+        {
+            "<leader>on",
+            "<Cmd>Obsidian link_new<CR>",
+            desc = "[O]bsidian Visual selection [N]ew Link",
+            mode = "v",
+        },
+        { "<leader>ol", "<Cmd>Obsidian links<CR>", desc = "[O]bsidian [L]ist Links" },
+        { "<leader>oo", "<Cmd>Obsidian quick_switch<CR>", desc = "[O]bsidian [O]pen Notes" },
+        { "<leader>of", "<Cmd>Obsidian search<CR>", desc = "[O]bsidian [F]ind" },
+        { "<leader>ot", "<Cmd>Obsidian tags<CR>", desc = "[O]bsidian [T]ags" },
+        { "<leader>oc", "<Cmd>Obsidian toc<CR>", desc = "[O]bsidian Table of [C]ontents" },
+        { "<C-space>", "<Cmd>Obsidian toggle_checkbox<CR>", desc = "Obsidian Toggle Checkbox" },
+    },
 }

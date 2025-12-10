@@ -1,22 +1,30 @@
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.zsh"
 
-ZSH_THEME="agnoster"
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
 
-plugins=(
-    git
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    zsh-completions
-)
+autoload -Uz compinit
+compinit
 
-source $ZSH/oh-my-zsh.sh
+fpath+=("$HOME/.zsh/pure")
+autoload -Uz promptinit; promptinit
+prompt pure
 
-# User configuration
+source "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#777'
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-export LANG=en_US.UTF-8
+fpath+=("$HOME/.zsh/plugins/zsh-completions/src")
+
+setopt AUTO_CD               # cd by just typing directory name
+setopt CORRECT               # command correction
+setopt EXTENDED_GLOB         # advanced globbing
+setopt NO_BEEP               # silence
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

@@ -46,4 +46,11 @@ if command -v tmux >/dev/null 2>&1; then
     fi
 fi
 
+# Enable directory colors
+eval "$(dircolors -b)"
+
+alias ls='ls --color=auto'
+alias ll='ls -lh --color=auto'
+alias la='ls -A --color=auto'
+
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"

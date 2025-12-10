@@ -18,6 +18,7 @@ return {
                     "pyright",
                     "clangd",
                     "harper_ls",
+                    "rust_analyzer",
                 },
             })
             require("mason-nvim-dap").setup({

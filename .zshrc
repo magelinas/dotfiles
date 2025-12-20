@@ -46,6 +46,13 @@ if command -v tmux >/dev/null 2>&1; then
     fi
 fi
 
+# keybind fixes for Tmux
+bindkey '^[[1;3D' backward-word
+bindkey '^[[1;3C' forward-word
+
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+
 # Enable directory colors
 eval "$(dircolors -b)"
 

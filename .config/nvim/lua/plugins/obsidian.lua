@@ -133,22 +133,4 @@ return {
             order = { " ", "~", "!", ">", "x" },
         },
     },
-    keys = {
-        { "<leader>on", "<Cmd>Obsidian new<CR>", desc = "[O]bsidian [N]ew note" },
-        { "<leader>ob", "<Cmd>Obsidian backlinks<CR>", desc = "[O]bsidian [B]acklinks" },
-        { "<leader>oen", "<Cmd>Obsidian extract_note<CR>", desc = "[O]bsidian [E]xtract [N]ote" },
-        { "<CR>", "<Cmd>Obsidian follow_link<CR>", desc = "Obsidian Follow Link" },
-        {
-            "<leader>on",
-            "<Cmd>Obsidian link_new<CR>",
-            desc = "[O]bsidian Visual selection [N]ew Link",
-            mode = "v",
-        },
-        { "<leader>ol", "<Cmd>Obsidian links<CR>", desc = "[O]bsidian [L]ist Links" },
-        { "<leader>oo", "<Cmd>Obsidian quick_switch<CR>", desc = "[O]bsidian [O]pen Notes" },
-        { "<leader>of", "<Cmd>Obsidian search<CR>", desc = "[O]bsidian [F]ind" },
-        { "<leader>ot", "<Cmd>Obsidian tags<CR>", desc = "[O]bsidian [T]ags" },
-        { "<leader>oc", "<Cmd>Obsidian toc<CR>", desc = "[O]bsidian Table of [C]ontents" },
-        { "<C-space>", "<Cmd>Obsidian toggle_checkbox<CR>", desc = "Obsidian Toggle Checkbox" },
-    },
 }

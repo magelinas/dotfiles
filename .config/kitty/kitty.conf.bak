@@ -334,7 +334,7 @@
 #: Stop blinking cursor after the specified number of seconds of
 #: keyboard inactivity. Set to zero to never stop blinking.
 
-# cursor_trail 0
+ cursor_trail 1
 
 #: Set this to a value larger than zero to enable a "cursor trail"
 #: animation. This is an animation that shows a "trail" following the
@@ -1069,7 +1069,7 @@
 #: insensitive, from the set 0-9A-Z\-=[];',./\\`. Specify your
 #: preference as a string of characters.
 
-# confirm_os_window_close -1
+confirm_os_window_close 0
 
 #: Ask for confirmation when closing an OS window or a tab with at
 #: least this number of kitty windows in it by window manager (e.g.
@@ -1460,7 +1460,7 @@
 
 #: Advanced {{{
 
- shell /usr/bin/fish
+ shell /usr/bin/zsh --login --interactive
 
 #: The shell program to execute. The default value of . means to use
 #: the value of of the SHELL environment variable or if unset,
@@ -2711,3 +2711,9 @@
 #: }}}
 
 #: }}}
+
+
+# BEGIN_KITTY_THEME
+# Catppuccin-Macchiato
+include current-theme.conf
+# END_KITTY_THEME

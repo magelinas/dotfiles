@@ -8,6 +8,8 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
 
+bindkey -e
+
 autoload -Uz compinit
 compinit
 

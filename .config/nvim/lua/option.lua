@@ -14,6 +14,8 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
+vim.o.termsync = false
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.o.statuscolumn = "%s %l %r"

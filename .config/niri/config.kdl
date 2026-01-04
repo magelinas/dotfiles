@@ -98,7 +98,7 @@ animations {
 
 spawn-at-startup "wpaperd"
 spawn-at-startup "librewolf"
-spawn-at-startup "wezterm"
+spawn-at-startup "emacsclient -n -a 'emacs'"
 spawn-at-startup "steam"
 spawn-at-startup "thunderbird"
 spawn-at-startup "feishin"
@@ -124,7 +124,7 @@ window-rule {
 }
 
 window-rule {
-    match at-startup=true app-id="wezterm"
+    match at-startup=true app-id="Emacs"
     open-on-output "DP-1"
 }
 
@@ -144,7 +144,8 @@ window-rule {
 }
 
 binds {
-    Mod+Return hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
+    Mod+E hotkey-overlay-title="Open Emacs" { spawn-sh "emacsclient -c"; }
     Mod+Space hotkey-overlay-title="Open program picker" { spawn-sh "dms ipc call spotlight toggle"; } 
     Mod+Shift+S hotkey-overlay-title="Region screenshot" { spawn-sh "slurp | grim -g - - | wl-copy"; }
 
@@ -164,6 +165,8 @@ binds {
     Mod+O repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
+
+    Mod+B { spawn-sh "dms ipc call bar toggle index 0"; }
 
     Mod+H     { focus-column-left; }
     Mod+J     { focus-window-down; }

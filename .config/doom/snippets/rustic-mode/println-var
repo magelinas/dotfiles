@@ -1,0 +1,4 @@
+# name: println variable
+# key: pv
+# --
+println!("{${1:var}}");

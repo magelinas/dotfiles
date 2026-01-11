@@ -21,7 +21,35 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 16 ))
+(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 18 ))
+
+(setq doom-variable-pitch-font
+      (font-spec :family "Noto Serif" :size 18 ))
+
+;; Variable pitch only in org mode
+(add-hook! org-mode
+  (variable-pitch-mode 1))
+
+(after! org
+  (set-face-attribute 'org-block nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-code nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-verbatim nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-special-keyword nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-meta-line nil :inherit 'fixed-pitch))
+
+(after! org
+  (custom-set-faces!
+    '(org-document-title :height 1.4 :weight bold)
+    '(org-level-1 :height 1.3 :weight bold)
+    '(org-level-2 :height 1.2 :weight bold)
+    '(org-level-3 :height 1.1 :weight semi-bold)
+    '(org-level-4 :height 1.05)
+    '(org-level-5 :height 1.0)
+    '(org-level-6 :height 1.0)
+    '(org-level-7 :height 1.0)
+    '(org-level-8 :height 1.0)))
+
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to

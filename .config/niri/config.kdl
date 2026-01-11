@@ -144,7 +144,7 @@ window-rule {
 }
 
 binds {
-    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
     Mod+E hotkey-overlay-title="Open Emacs" { spawn-sh "emacsclient -c"; }
     Mod+Space hotkey-overlay-title="Open program picker" { spawn-sh "dms ipc call spotlight toggle"; } 
     Mod+Shift+S hotkey-overlay-title="Region screenshot" { spawn-sh "slurp | grim -g - - | wl-copy"; }

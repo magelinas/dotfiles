@@ -35,7 +35,7 @@ return {
     },
     keys = {
         {
-            "<leader>cc",
+            "<leader>ai",
             "<cmd>CodeCompanionChat<CR>",
             desc = "Toggle Code Companion Chat",
         },

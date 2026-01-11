@@ -30,6 +30,13 @@ return {
             desc = "Smart Find Files",
         },
         {
+            "<leader>ss",
+            function()
+                Snacks.picker.lsp_symbols()
+            end,
+            desc = "LSP Symbols",
+        },
+        {
             "<leader>,",
             function()
                 Snacks.picker.buffers()

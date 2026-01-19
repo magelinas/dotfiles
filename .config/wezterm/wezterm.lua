@@ -91,13 +91,13 @@ return {
 
     hide_tab_bar_if_only_one_tab = false,
 
-    unix_domains = {
-        {
-            name = "unix",
-        },
-    },
-
-    default_gui_startup_args = { "connect", "unix" },
+    -- unix_domains = {
+    --     {
+    --         name = "unix",
+    --     },
+    -- },
+    --
+    -- default_gui_startup_args = { "connect", "unix" },
 
     leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 },
 

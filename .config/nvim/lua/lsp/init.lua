@@ -42,6 +42,39 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
+-- Toggle between :terminal and current buffer
+local term_buf = nil
+local last_buf = nil
+
+local function toggle_terminal()
+    local cur = vim.api.nvim_get_current_buf()
+
+    if vim.bo[cur].buftype == "terminal" then
+        if last_buf and vim.api.nvim_buf_is_valid(last_buf) then
+            vim.cmd("buffer " .. last_buf)
+        end
+        return
+    end
+
+    last_buf = cur
+
+    if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
+        vim.cmd("buffer " .. term_buf)
+        vim.cmd("startinsert")
+        return
+    end
+
+    vim.cmd("terminal")
+    term_buf = vim.api.nvim_get_current_buf()
+    vim.cmd("startinsert")
+end
+
+vim.keymap.set({ "n", "t" }, "<leader>tt", function()
+    vim.cmd("stopinsert")
+    toggle_terminal()
+end)
+--
+
 for _, file in ipairs(vim.fn.readdir(lsp_path)) do
     if file:match("%.lua$") and file ~= "init.lua" then
         local module_name = "lsp." .. file:gsub("%.lua$", "")

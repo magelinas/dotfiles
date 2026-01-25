@@ -29,6 +29,19 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
       commit_icon = '@'
       fetch_status = true
 
+  [[blocks.segments]]
+    type = 'jujutsu'
+    style = 'plain'
+    foreground = 'p:grey'
+    background = 'transparent'
+    # template = ' \uf1fa{{.ChangeID}}{{if .Working.Changed}} \uf044 {{ .Working.String }}{{ end }}'
+
+    [blocks.segments.properties]
+      ignore_working_copy = false
+      fetch_ahead_counter = true
+      ahead_icon = "⇡"
+      fetch_status = true
+
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'

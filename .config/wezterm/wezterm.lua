@@ -83,21 +83,13 @@ return {
 
     window_background_opacity = 0.97,
 
-    default_prog = { "/usr/bin/fish", "--login", "--interactive" },
+    default_prog = { "/usr/bin/zsh", "--login", "--interactive" },
 
     color_scheme = "Tokyo Night",
 
     enable_tab_bar = true,
 
     hide_tab_bar_if_only_one_tab = false,
-
-    -- unix_domains = {
-    --     {
-    --         name = "unix",
-    --     },
-    -- },
-    --
-    -- default_gui_startup_args = { "connect", "unix" },
 
     leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 },
 

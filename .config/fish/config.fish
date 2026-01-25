@@ -10,6 +10,7 @@ end
 set fish_greeting
 
 alias pamcan=pacman
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 
 set -gx TERM xterm-256color
+zoxide init fish --cmd cd | source
+oh-my-posh init fish --config $HOME/.config/oh-my-posh/config.toml | source

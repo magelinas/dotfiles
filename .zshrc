@@ -12,6 +12,78 @@ setopt INC_APPEND_HISTORY
 
 bindkey -e
 
+# Catppuccin Macchiato Theme (for zsh-syntax-highlighting)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main cursor)
+typeset -gA ZSH_HIGHLIGHT_STYLES
+
+# Main highlighter styling: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
+#
+## General
+### Diffs
+### Markup
+## Classes
+## Comments
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#5b6078'
+## Constants
+## Entitites
+## Functions/methods
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#a6da95'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#a6da95'
+ZSH_HIGHLIGHT_STYLES[global-alias]='fg=#a6da95'
+ZSH_HIGHLIGHT_STYLES[function]='fg=#a6da95'
+ZSH_HIGHLIGHT_STYLES[command]='fg=#a6da95'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=#a6da95,italic'
+ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=#f5a97f,italic'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#f5a97f'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#f5a97f'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=#c6a0f6'
+## Keywords
+## Built ins
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=#a6da95'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#a6da95'
+ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=#a6da95'
+## Punctuation
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=#ed8796'
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=#cad3f5'
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]='fg=#cad3f5'
+ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]='fg=#cad3f5'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=#ed8796'
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=#ed8796'
+ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=#ed8796'
+## Serializable / Configuration Languages
+## Storage
+## Strings
+ZSH_HIGHLIGHT_STYLES[command-substitution-quoted]='fg=#eed49f'
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]='fg=#eed49f'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#eed49f'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=#ee99a0'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#eed49f'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=#ee99a0'
+ZSH_HIGHLIGHT_STYLES[rc-quote]='fg=#eed49f'
+## Variables
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=#cad3f5'
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument-unclosed]='fg=#ee99a0'
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=#cad3f5'
+ZSH_HIGHLIGHT_STYLES[assign]='fg=#cad3f5'
+ZSH_HIGHLIGHT_STYLES[named-fd]='fg=#cad3f5'
+ZSH_HIGHLIGHT_STYLES[numeric-fd]='fg=#cad3f5'
+## No category relevant in spec
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#ee99a0'
+ZSH_HIGHLIGHT_STYLES[path]='fg=#cad3f5,underline'
+ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=#ed8796,underline'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#cad3f5,underline'
+ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]='fg=#ed8796,underline'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=#cad3f5'
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=#c6a0f6'
+#ZSH_HIGHLIGHT_STYLES[command-substitution]='fg=?'
+#ZSH_HIGHLIGHT_STYLES[command-substitution-unquoted]='fg=?'
+#ZSH_HIGHLIGHT_STYLES[process-substitution]='fg=?'
+#ZSH_HIGHLIGHT_STYLES[arithmetic-expansion]='fg=?'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=#ee99a0'
+ZSH_HIGHLIGHT_STYLES[redirection]='fg=#cad3f5'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=#cad3f5'
+ZSH_HIGHLIGHT_STYLES[default]='fg=#cad3f5'
+ZSH_HIGHLIGHT_STYLES[cursor]='fg=#cad3f5'
 source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fpath=($HOME/.zsh/zsh-completions/src $fpath)
@@ -25,53 +97,7 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*' clear-screen true
 
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
-
-# Tokyo-Night scheme
-ZSH_HIGHLIGHT_STYLES[command]='fg=#7aa2f7'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=#7aa2f7'
-ZSH_HIGHLIGHT_STYLES[function]='fg=#7aa2f7'
-
-ZSH_HIGHLIGHT_STYLES[alias]='fg=#73daca'
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#bb9af7'
-
-ZSH_HIGHLIGHT_STYLES[path]='fg=#73daca'
-ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#73daca'
-ZSH_HIGHLIGHT_STYLES[path_approx]='fg=#73daca'
-
-ZSH_HIGHLIGHT_STYLES[option]='fg=#bb9af7'
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#bb9af7'
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#bb9af7'
-
-ZSH_HIGHLIGHT_STYLES[default]='fg=#c0caf5'
-ZSH_HIGHLIGHT_STYLES[arg0]='fg=#7aa2f7'
-
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#9ece6a'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#9ece6a'
-ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=#9ece6a'
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=#9ece6a'
-
-ZSH_HIGHLIGHT_STYLES[variable]='fg=#c0caf5'
-ZSH_HIGHLIGHT_STYLES[assign]='fg=#c0caf5'
-
-ZSH_HIGHLIGHT_STYLES[redirection]='fg=#89ddff'
-
-ZSH_HIGHLIGHT_STYLES[comment]='fg=#565f89,italic'
-
-ZSH_HIGHLIGHT_STYLES[numeric]='fg=#ff9e64'
-
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#f7768e,bold'
-
-ZSH_HIGHLIGHT_STYLES[bracket]='fg=#c0caf5'
-ZSH_HIGHLIGHT_STYLES[separator]='fg=#c0caf5'
-
-ZSH_HIGHLIGHT_STYLES[command-substitution]='fg=#7aa2f7'
-ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=#7aa2f7'
-
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=#ff9e64'
-
-ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=#f7768e'
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#565f89'
+eval "$(zoxide init zsh --cmd cd)"
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
@@ -130,7 +156,7 @@ bindkey '^[[1;5C' forward-word                  # ctrl+right go forward one word
 bindkey '^[[1;5D' backward-word                 # ctrl+left  go backward one word
 bindkey '^H'      backward-kill-word            # ctrl+bs    delete previous word
 bindkey '^[[3;5~' kill-word                     # ctrl+del   delete next word
-bindkey '^J'      backward-kill-line            # ctrl+j     delete everything before cursor
+bindkey '^U'      backward-kill-line            # ctrl+u     delete everything before cursor
 bindkey '^[[D'    backward-char                 # left       move cursor one char backward
 bindkey '^[[C'    forward-char                  # right      move cursor one char forward
 bindkey '^[[A'    up-line-or-beginning-search   # up         prev command in history

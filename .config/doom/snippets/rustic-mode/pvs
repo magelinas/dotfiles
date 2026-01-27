@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: println symbol at point
-# key: pvs
-# --
-println!("{${1:$0}}");

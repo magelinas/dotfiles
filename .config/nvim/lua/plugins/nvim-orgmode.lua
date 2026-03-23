@@ -8,7 +8,7 @@ return {
             org_capture_templates = {
                 t = {
                     description = "Tasks",
-                    template = "* TODO %?\n %u",
+                    template = "* TODO %?\n %a\n%u",
                     target = "~/org/refile.org",
                 },
                 n = {

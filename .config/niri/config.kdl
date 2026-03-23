@@ -98,10 +98,10 @@ animations {
 
 spawn-at-startup "wpaperd"
 spawn-at-startup "librewolf"
-spawn-at-startup "emacsclient -n -a 'emacs'"
 spawn-at-startup "steam"
 spawn-at-startup "thunderbird"
 spawn-at-startup "feishin"
+spawn-sh-at-startup "easyeffects -w"
 
 window-rule {
     open-maximized true
@@ -124,11 +124,6 @@ window-rule {
 }
 
 window-rule {
-    match at-startup=true app-id="Emacs"
-    open-on-output "DP-1"
-}
-
-window-rule {
     match at-startup=true app-id="steam"
     open-on-output "DP-2"
 }
@@ -144,7 +139,7 @@ window-rule {
 }
 
 binds {
-    Mod+Return hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: wezterm" { spawn "foot"; }
     Mod+E hotkey-overlay-title="Open Emacs" { spawn-sh "emacsclient -c"; }
     Mod+Space hotkey-overlay-title="Open program picker" { spawn-sh "dms ipc call spotlight toggle"; } 
     Mod+Shift+S hotkey-overlay-title="Region screenshot" { spawn-sh "slurp | grim -g - - | wl-copy"; }
@@ -167,6 +162,10 @@ binds {
     Mod+Q repeat=false { close-window; }
 
     Mod+B { spawn-sh "dms ipc call bar toggle index 0"; }
+
+    Mod+M { spawn-sh "gpu-screen-recorder -w DP-1 -f 60 -r 600 -c mp4 -o /media/patate/recordings -replay-storage disk -bm cbr -q 20000 -a default_output"; }
+    Mod+Shift+M { spawn-sh "pkill -SIGINT -f gpu-screen-recorder"; } 
+    Mod+N { spawn-sh "pkill -SIGUSR1 -f gpu-screen-recorder"; }
 
     Mod+H     { focus-column-left; }
     Mod+J     { focus-window-down; }

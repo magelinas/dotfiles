@@ -3,6 +3,7 @@ return {
     recommended = true,
     dependencies = {
         "nvim-neotest/nvim-nio",
+        "Civitasv/cmake-tools.nvim",
         "leoluz/nvim-dap-go",
         "rcarriga/nvim-dap-ui",
         "mfussenegger/nvim-dap-python",
@@ -33,6 +34,8 @@ return {
             dapui.close()
         end
 
+        local cmake = require("cmake-tools")
+
         dap.adapters.go = {
             type = "executable",
             command = "node",
@@ -47,6 +50,30 @@ return {
                 program = "${workspaceFolder}/main.go",
                 args = require("dap-go").get_arguments,
                 dlvToolPath = vim.fn.exepath("dlv"),
+            },
+        }
+        dap.adapters.cpp = {
+            type = "server",
+            port = "${port}",
+            executable = {
+                command = "codelldb",
+                args = { "--port", "${port}" },
+            }
+        }
+        dap.configurations.cpp = {
+            {
+                name = "Launch file",
+                type = "cpp",
+                request = "launch",
+                program = function()
+                    return cmake.get_launch_target_path()
+                    -- return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+                end,
+                cwd = cmake.get_launch_target_directory,
+                stopOnEntry = false,
+                args = {},
+                runInTerminal = true,
+                console = "externalTerminal"
             },
         }
     end,

@@ -21,7 +21,7 @@ require("codecompanion").setup(
                         name = "qwen",
                         schema = {
                             model = {
-                                default = "qwen3-coder:31b",
+                                default = "qwen3-coder:30b",
                             },
                             keep_alive = {
                                 default = "30m",
@@ -38,4 +38,4 @@ require("codecompanion").setup(
     }
 )
 
-vim.keymap.set("n", "<leader>ai", "<cmd>CodeCompanionChat<CR>", { desc = "Toggle Code Companion Chat"})
+vim.keymap.set("n", "<leader>ai", "<cmd>CodeCompanionChat<CR>", { desc = "Toggle Code Companion Chat" })

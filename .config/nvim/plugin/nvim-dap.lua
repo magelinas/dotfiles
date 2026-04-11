@@ -9,52 +9,53 @@ vim.pack.add(
     }
 )
 
-        require("dapui").setup()
-        local dap, dapui = require("dap"), require("dapui")
-        dap.listeners.before.attach.dapui_config = function()
-            dapui.open()
-        end
-        dap.listeners.before.launch.dapui_config = function()
-            dapui.open()
-        end
-        dap.listeners.before.event_terminated.dapui_config = function()
-            dapui.close()
-        end
-        dap.listeners.before.event_exited.dapui_config = function()
-            dapui.close()
-        end
-        dap.listeners.before.disconnect.dapui_config = function()
-            dapui.close()
-        end
+require("dapui").setup()
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.before.attach.dapui_config = function()
+    dapui.open()
+end
+dap.listeners.before.launch.dapui_config = function()
+    dapui.open()
+end
+dap.listeners.before.event_terminated.dapui_config = function()
+    dapui.close()
+end
+dap.listeners.before.event_exited.dapui_config = function()
+    dapui.close()
+end
+dap.listeners.before.disconnect.dapui_config = function()
+    dapui.close()
+end
 
-        local cmake = require("cmake-tools")
+local cmake = require("cmake-tools")
 
-        dap.adapters.cpp = {
-            type = "server",
-            port = "${port}",
-            executable = {
-                command = "codelldb",
-                args = { "--port", "${port}" },
-            }
-        }
-        dap.configurations.cpp = {
-            {
-                name = "Launch file",
-                type = "cpp",
-                request = "launch",
-                program = function()
-                    return cmake.get_launch_target_path()
-                    -- return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                end,
-                cwd = cmake.get_launch_target_directory,
-                stopOnEntry = false,
-                args = {},
-                runInTerminal = true,
-                console = "externalTerminal"
-            },
-        }
+dap.adapters.cpp = {
+    type = "server",
+    port = "${port}",
+    executable = {
+        command = "codelldb",
+        args = { "--port", "${port}" },
+    }
+}
+dap.configurations.cpp = {
+    {
+        name = "Launch file",
+        type = "cpp",
+        request = "launch",
+        program = function()
+            return cmake.get_launch_target_path()
+            -- return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = cmake.get_launch_target_directory,
+        stopOnEntry = false,
+        args = {},
+        runInTerminal = true,
+        console = "externalTerminal"
+    },
+}
 
-vim.keymap.set("n", "<leader>dB", function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, { desc = "Breakpoint Condition" })
+vim.keymap.set("n", "<leader>dB", function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
+    { desc = "Breakpoint Condition" })
 
 vim.keymap.set("n", "<leader>db", function() dap.toggle_breakpoint() end, { desc = "Toggle Breakpoint" })
 

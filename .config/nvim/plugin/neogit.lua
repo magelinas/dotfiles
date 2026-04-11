@@ -11,4 +11,4 @@ require("neogit").setup({
     cmd = "Neogit",
 })
 
-vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Show Neogit UI" }) 
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Show Neogit UI" })

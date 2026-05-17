@@ -2,7 +2,7 @@ vim.pack.add(
     {
         "https://github.com/sindrets/diffview.nvim",
         "https://github.com/nvim-lua/plenary.nvim",
-        "https://github.com/ibhagwan/fzf-lua",
+        "https://github.com/folke/snacks.nvim",
         "https://github.com/NeogitOrg/neogit",
     }
 )

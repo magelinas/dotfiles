@@ -10,11 +10,11 @@
       "src": "https://github.com/Civitasv/cmake-tools.nvim"
     },
     "codecompanion.nvim": {
-      "rev": "9724e1386c41d3f986fd11cd127998c55dc26ea0",
+      "rev": "bc82fbca915f28467a2e2e74e11845ce20d8017c",
       "src": "https://github.com/olimorris/codecompanion.nvim"
     },
     "compile-mode.nvim": {
-      "rev": "ce34ad9e69cb6a2d9f71017f4cb090195fb9fc09",
+      "rev": "dd3e952076a33faba0a55b04b2b73945832c0527",
       "src": "https://github.com/ej-shafran/compile-mode.nvim"
     },
     "cspell.nvim": {
@@ -29,21 +29,17 @@
       "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
       "src": "https://github.com/folke/flash.nvim"
     },
-    "fzf-lua": {
-      "rev": "47b85a25c0c0b2c20b4e75199ed01bb71e7814f5",
-      "src": "https://github.com/ibhagwan/fzf-lua"
-    },
     "lensline.nvim": {
       "rev": "6d0beaa5548ff54b8f3d9b3195aea1369ccf62a4",
       "src": "https://github.com/oribarilan/lensline.nvim",
       "version": "'2.0.0'"
     },
     "lualine.nvim": {
-      "rev": "f5d2a8570f8b736ddb9bb4be504355bcd6e15ec8",
+      "rev": "a905eeebc4e63fdc48b5135d3bf8aea5618fb21c",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mini.icons": {
-      "rev": "7fdae2443a0e2910015ca39ad74b50524ee682d3",
+      "rev": "bac6317300e205335df425296570d84322730067",
       "src": "https://github.com/echasnovski/mini.icons"
     },
     "neogen": {
@@ -51,15 +47,15 @@
       "src": "https://github.com/danymat/neogen"
     },
     "neogit": {
-      "rev": "e06745228600a585b88726fc9fba44a373c15a47",
+      "rev": "2d94da0032e201865a5b65a6bc008dd6fce8f52e",
       "src": "https://github.com/NeogitOrg/neogit"
     },
     "none-ls-extras.nvim": {
-      "rev": "14fa31ce8c0268a3b2c9cc14979ecf771982d433",
+      "rev": "70ec8815cdf186223af04cc5a15bc8bdface0ef0",
       "src": "https://github.com/nvimtools/none-ls-extras.nvim"
     },
     "none-ls.nvim": {
-      "rev": "7f9301e416533b5d74e2fb3b1ce5059eeaed748b",
+      "rev": "e135361b9c11755ef6c48f54a2c970c509b56239",
       "src": "https://github.com/nvimtools/none-ls.nvim"
     },
     "nvim-dap": {
@@ -95,17 +91,12 @@
       "rev": "ab3eb124062422d276fae49e0dd63b3ad1062cfc",
       "src": "https://github.com/kevinhwang91/nvim-ufo"
     },
-    "nvim-web-devicons": {
-      "rev": "b34362b20a4942b3245f958e73ebe1b09b020ad1",
-      "src": "https://github.com/nvim-tree/nvim-web-devicons",
-      "version": ">=0.0.0"
-    },
     "oil.nvim": {
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "orgmode": {
-      "rev": "1ab7b456020de8bdaed7d8135b5376a0b4419b11",
+      "rev": "a214db3c8ed7eb68cb74924575b91ffc658e7d82",
       "src": "https://github.com/nvim-orgmode/orgmode"
     },
     "plenary.nvim": {
@@ -115,6 +106,10 @@
     "promise-async": {
       "rev": "119e8961014c9bfaf1487bf3c2a393d254f337e2",
       "src": "https://github.com/kevinhwang91/promise-async"
+    },
+    "snacks.nvim": {
+      "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
+      "src": "https://github.com/folke/snacks.nvim"
     },
     "tokyonight.nvim": {
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",

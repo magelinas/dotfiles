@@ -1,5 +1,11 @@
 return {
-    cmd = { "clangd", "--clang-tidy", "--experimental-modules-support" },
+    cmd = {
+        "clangd",
+        "--clang-tidy",
+        "--background-index",
+        "--completion-style=detailed",
+        "--header-insertion=iwyu",
+    },
     filetypes = { "c", "cpp", "h", "hpp", "ixx", "cc", "inl" },
     root_markers = {
         ".clangd",

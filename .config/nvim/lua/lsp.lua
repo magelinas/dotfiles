@@ -1,4 +1,4 @@
-vim.lsp.enable({ "clangd", "harper", "lua", "pyright", "rust"})
+vim.lsp.enable({ "clangd", "harper", "lua", "pyright", "rust", "zig" })
 local lsp_path = vim.fn.stdpath("config") .. "/lua/lsp/"
 
 vim.diagnostic.config({

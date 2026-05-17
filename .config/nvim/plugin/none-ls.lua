@@ -33,4 +33,4 @@ null_ls.setup({
     },
 })
 
-vim.keymap.set("n", "<leader>gf>", vim.lsp.buf.format, { desc = "Buffer format" })
+vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Buffer format" })

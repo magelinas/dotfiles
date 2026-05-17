@@ -4,7 +4,7 @@ vim.pack.add({
 
 require("nvim-treesitter").setup({
     opts = {
-        ensure_installed = { "c", "cpp", "lua", "go", "python", "vimdoc", "python", "markdown", "markdown_inline" },
+        ensure_installed = { "c", "cpp", "lua", "go", "python", "vimdoc", "python", "markdown", "markdown_inline", "zig" },
         auto_install = true,
         highlight = { enable = true },
         indent = { enable = true },

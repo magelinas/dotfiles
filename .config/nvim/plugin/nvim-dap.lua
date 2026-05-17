@@ -29,28 +29,26 @@ end
 
 local cmake = require("cmake-tools")
 
-dap.adapters.cpp = {
-    type = "server",
-    port = "${port}",
-    executable = {
-        command = "codelldb",
-        args = { "--port", "${port}" },
-    }
+dap.adapters.lldb = {
+    type = "executable",
+    command = "/usr/bin/lldb-dap",
+    name = "lldb"
 }
 dap.configurations.cpp = {
     {
-        name = "Launch file",
-        type = "cpp",
+        name = "Launch",
+        type = "lldb",
         request = "launch",
         program = function()
             return cmake.get_launch_target_path()
             -- return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
         end,
         cwd = cmake.get_launch_target_directory,
+        -- cwd = "${workspaceFolder}",
         stopOnEntry = false,
         args = {},
-        runInTerminal = true,
-        console = "externalTerminal"
+        -- runInTerminal = true,
+        -- console = "externalTerminal"
     },
 }
 

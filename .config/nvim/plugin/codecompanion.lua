@@ -6,8 +6,30 @@ vim.pack.add(
     }
 )
 
+local providers = require("codecompanion.providers")
 require("codecompanion").setup(
     {
+        interactions = {
+            chat = {
+                slash_commands = {
+                    ["file"] = {
+                        opts = {
+                            provider = providers.snacks
+                        },
+                    },
+                    ["buffer"] = {
+                        opts = {
+                            provider = providers.snacks
+                        },
+                    },
+                    ["help"] = {
+                        opts = {
+                            provider = providers.snacks
+                        },
+                    },
+                },
+            },
+        },
         strategies = {
             -- Change the default chat adapter and model
             chat = {

@@ -8,7 +8,13 @@ require("oil").setup(
         view_options = {
             case_insensitive = true,
         },
-        keymaps = {
+        columns      = {
+            "icon",
+            "permissions",
+            "size",
+            "mtime"
+        },
+        keymaps      = {
             ["-"] = { "actions.parent", mode = "n" },
         },
     }

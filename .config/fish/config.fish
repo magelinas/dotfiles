@@ -12,5 +12,6 @@ set fish_greeting
 alias pamcan=pacman
 
 set -gx TERM xterm-256color
+set -Ux ZK_NOTEBOOK_DIR ~/notes 
 zoxide init fish --cmd cd | source
 oh-my-posh init fish --config $HOME/.config/oh-my-posh/config.toml | source

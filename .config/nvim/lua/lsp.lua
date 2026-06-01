@@ -1,5 +1,4 @@
 vim.lsp.enable({ "clangd", "harper", "lua", "pyright", "rust", "zig" })
-local lsp_path = vim.fn.stdpath("config") .. "/lua/lsp/"
 
 vim.diagnostic.config({
     float = {
@@ -75,10 +74,3 @@ vim.keymap.set({ "n", "t" }, "<leader>tt", function()
     toggle_terminal()
 end)
 --
-
-for _, file in ipairs(vim.fn.readdir(lsp_path)) do
-    if file:match("%.lua$") and file ~= "init.lua" then
-        local module_name = "lsp." .. file:gsub("%.lua$", "")
-        require(module_name)
-    end
-end

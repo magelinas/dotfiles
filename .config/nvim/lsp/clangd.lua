@@ -5,6 +5,7 @@ return {
         "--background-index",
         "--completion-style=detailed",
         "--header-insertion=iwyu",
+        "--experimental-modules-support",
     },
     filetypes = { "c", "cpp", "h", "hpp", "ixx", "cc", "inl" },
     root_markers = {

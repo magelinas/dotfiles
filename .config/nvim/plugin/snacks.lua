@@ -3,24 +3,19 @@ vim.pack.add({
 })
 
 require("snacks").setup({
-    opts = {
-        picker = {
-            enabled = true,
-            layout = {
-                preset = "telescope",
-            },
-        },
-        matcher = {
-            frecency = true,
-            cwd_bonus = true,
-        },
-        filter = {
-            cwd = true,
-        },
-        image = {
-            enabled = true,
-        },
-    }
+    picker = {
+        enabled = true,
+    },
+    matcher = {
+        frecency = true,
+        cwd_bonus = true,
+    },
+    filter = {
+        cwd = true,
+    },
+    image = {
+        enabled = true,
+    },
 })
 
 vim.keymap.set("n", "<leader>sf", function() Snacks.picker.smart() end, { desc = "Smart Find Files" })

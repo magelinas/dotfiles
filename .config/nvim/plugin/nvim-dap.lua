@@ -52,6 +52,18 @@ dap.configurations.cpp = {
     },
 }
 
+dap.configurations.zig = {
+    {
+        name = "Launch",
+        type = "lldb",
+        request = "launch",
+        program = "${workspaceFolder}/zig-out/bin/${workspaceFolderBasename}",
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+        args = {},
+    },
+}
+
 vim.keymap.set("n", "<leader>dB", function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
     { desc = "Breakpoint Condition" })
 

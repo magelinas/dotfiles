@@ -13,6 +13,10 @@
       "rev": "bc82fbca915f28467a2e2e74e11845ce20d8017c",
       "src": "https://github.com/olimorris/codecompanion.nvim"
     },
+    "compile-mode.nvim": {
+      "rev": "026b866dfb162313c3f1573f73daece6af0da3e3",
+      "src": "https://github.com/ej-shafran/compile-mode.nvim"
+    },
     "cspell.nvim": {
       "rev": "5feecef8d109f5460c576596aba44a6253127aa4",
       "src": "https://github.com/davidmh/cspell.nvim"
@@ -20,6 +24,10 @@
     "diffview.nvim": {
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim"
+    },
+    "dooing": {
+      "rev": "2871aaf400c49187aa4216e7cf7abfa37cd32840",
+      "src": "https://github.com/atiladefreitas/dooing"
     },
     "flash.nvim": {
       "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",

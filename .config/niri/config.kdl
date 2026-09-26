@@ -91,7 +91,7 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
-    slowdown 0.5
+    slowdown 0.2
 }
 
 spawn-at-startup "wpaperd"
@@ -100,10 +100,11 @@ spawn-at-startup "steam"
 spawn-at-startup "thunderbird"
 spawn-at-startup "feishin"
 spawn-sh-at-startup "easyeffects -w"
+spawn-at-startup "waybar"
 
-window-rule {
-    open-maximized true
-}
+// window-rule {
+//     open-maximized true
+// }
 
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
@@ -137,9 +138,8 @@ window-rule {
 }
 
 binds {
-    Mod+Return hotkey-overlay-title="Open a Terminal: wezterm" { spawn "foot"; }
-    Mod+E hotkey-overlay-title="Open Emacs" { spawn-sh "emacsclient -c"; }
-    Mod+Space hotkey-overlay-title="Open program picker" { spawn-sh "dms ipc call spotlight toggle"; } 
+    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
+    Mod+Space hotkey-overlay-title="Open program picker" { spawn-sh "fuzzel"; } 
     Mod+Shift+S hotkey-overlay-title="Region screenshot" { spawn-sh "slurp | grim -g - - | wl-copy"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
@@ -159,7 +159,7 @@ binds {
 
     Mod+Q repeat=false { close-window; }
 
-    Mod+B { spawn-sh "dms ipc call bar toggle index 0"; }
+    Mod+B { spawn-sh "killall -SIGUSR1 waybar"; }
 
     Mod+M { spawn-sh "gpu-screen-recorder -w DP-1 -f 60 -r 600 -c mp4 -o /media/patate/recordings -replay-storage disk -bm cbr -q 20000 -a default_output"; }
     Mod+Shift+M { spawn-sh "pkill -SIGINT -f gpu-screen-recorder"; } 

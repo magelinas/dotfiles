@@ -1,4 +1,4 @@
-vim.lsp.enable({ "clangd", "harper", "lua", "pyright", "rust", "zig" })
+vim.lsp.enable({ "clangd", "harper", "neocmake", "lua", "pyright", "rust", "zig" })
 
 vim.diagnostic.config({
     float = {

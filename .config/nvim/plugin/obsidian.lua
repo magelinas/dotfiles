@@ -103,7 +103,7 @@ require("obsidian").setup(
     vim.keymap.set("n", "<leader>on", "<Cmd>Obsidian new ''<CR>", { desc = "[O]bsidian [N]ew note", silent = true }),
     vim.keymap.set("n", "<leader>ob", "<Cmd>Obsidian backlinks<CR>", { desc = "[O]bsidian [B]acklinks" }),
     vim.keymap.set("v", "<leader>oen", "<Cmd>Obsidian extract_note<CR>", { desc = "[O]bsidian [E]xtract [N]ote" }),
-    vim.keymap.set("n", "<CR>", "<Cmd>Obsidian follow_link<CR>", { desc = "Obsidian Follow Link" }),
+    vim.keymap.set("n", "<leader><CR>", "<Cmd>Obsidian follow_link<CR>", { desc = "Obsidian Follow Link" }),
     vim.keymap.set(
         "v",
         "<leader>on",
